@@ -1,10 +1,18 @@
+.hamburger__menu{
+  position: fixed;
+  top: 3%;
+  right: 5%;
+  z-index: 100;
+}
+
 .hamburger{
   width: 1.857rem;
-  height: 1.42rem;
+  height: 1.857rem;
   display: inline-flex;
   flex-direction: column;
   justify-content: space-between;
   display: none;
+  position: fixed;
 }
 
 .hamburger__plank{
