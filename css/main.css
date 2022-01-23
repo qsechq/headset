@@ -665,10 +665,11 @@ html {
   background: url("../img/map.png") center center no-repeat;
   background-size: cover;
   position: relative;
-  margin-bottom: 5.375rem;
 }
 
 .container--map {
+  padding-top: 1.187rem;
+  padding-bottom: 1.937rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -683,12 +684,6 @@ html {
   padding-top: 3px;
   fill: #E01F3D;
   display: none;
-}
-
-footer {
-  position: absolute;
-  padding-top: 1.25rem;
-  top: 100%;
 }
 
 .phone--footer {
@@ -884,13 +879,6 @@ footer {
     color: #E01F3D;
   }
 
-  .container--map {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-  }
-
   .social__link {
     height: 2.142rem;
     width: 2.142rem;
@@ -992,10 +980,6 @@ footer {
     text-align: center;
   }
 
-  .section__map {
-    margin-bottom: 11.615rem;
-  }
-
   .container--map {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1011,9 +995,6 @@ footer {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    margin-bottom: -11.615rem;
-    padding-bottom: 2.583rem;
-    padding-top: 1.538rem;
   }
 
   .address {

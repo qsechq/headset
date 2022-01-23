@@ -50,7 +50,7 @@
       color: #E01F3D;
     }
 
-    .container--map{flex-direction: row;}
+    
     .social__link{height: 2.142rem;width: 2.142rem;}
     
 }
@@ -92,20 +92,12 @@
         .reviews__text{margin-bottom: 0.75rem;}
         .form__controls{justify-content: center;}
         .form__btns{text-align: center;}
-        .section__map{
-          margin-bottom: 11.615rem;
-        }
-        
+       
 
         
         .container--map{flex-direction: column; justify-content: normal;}
         .footer{
-          flex-direction: column;
-          margin-bottom: -11.615rem;
-          padding-bottom:2.583rem ;
-          padding-top: 1.538rem;
-          
-        }
+          flex-direction: column;}
         .address{margin-bottom: 0.923rem;}
         .phone__icon{display: none;}
         .phone--footer{
