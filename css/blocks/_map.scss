@@ -9,8 +9,7 @@
   padding-bottom:1.937rem ;
   display: flex;
   justify-content: space-between;
-  position: absolute;
-  margin-left: 15rem;
+  position: relative;
 }
 
 .phone__icon{
@@ -19,4 +18,14 @@
   padding-top: 3px;
   fill:  #E01F3D;
   display: none;
+}
+
+.contacts{
+  display: flex;
+  justify-content: space-between;
+  width: 57.75rem;
+  position: absolute;
+    width: 57.75rem;
+    max-width: 100%;
+    margin: 0 auto;
 }

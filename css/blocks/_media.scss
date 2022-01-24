@@ -95,9 +95,9 @@
        
 
         
-        .container--map{flex-direction: column; justify-content: normal;margin-left: 0;}
+        .container--map{flex-direction: column; justify-content: normal;}
         .footer{
-          flex-direction: column;padding-bottom: 11.615rem;}
+          flex-direction: column;padding-bottom: 8.615rem;}
         .address{margin-bottom: 0.923rem;}
         .phone__icon{display: none;}
         .phone--footer{
@@ -119,6 +119,7 @@
           }
           }
 }
+.contacts{flex-direction: column;}
 .social__icon{
   width: 24px;
   height: 24px;

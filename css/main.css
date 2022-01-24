@@ -676,8 +676,7 @@ html {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  position: absolute;
-  margin-left: 15rem;
+  position: relative;
 }
 
 .phone__icon {
@@ -688,8 +687,22 @@ html {
   display: none;
 }
 
+.contacts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 57.75rem;
+  position: absolute;
+  width: 57.75rem;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
 .footer {
-  padding-bottom: 5.375rem;
+  padding-bottom: 2.375rem;
 }
 
 .phone--footer {
@@ -994,7 +1007,6 @@ html {
     -webkit-box-pack: normal;
         -ms-flex-pack: normal;
             justify-content: normal;
-    margin-left: 0;
   }
 
   .footer {
@@ -1002,7 +1014,7 @@ html {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    padding-bottom: 11.615rem;
+    padding-bottom: 8.615rem;
   }
 
   .address {
@@ -1042,6 +1054,13 @@ html {
 
   .phone__contact:before {
     display: block;
+  }
+
+  .contacts {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 
   .social__icon {
