@@ -676,6 +676,8 @@ html {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  position: absolute;
+  margin-left: 15rem;
 }
 
 .phone__icon {
@@ -684,6 +686,10 @@ html {
   padding-top: 3px;
   fill: #E01F3D;
   display: none;
+}
+
+.footer {
+  padding-bottom: 5.375rem;
 }
 
 .phone--footer {
@@ -988,6 +994,7 @@ html {
     -webkit-box-pack: normal;
         -ms-flex-pack: normal;
             justify-content: normal;
+    margin-left: 0;
   }
 
   .footer {
@@ -995,6 +1002,7 @@ html {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    padding-bottom: 11.615rem;
   }
 
   .address {
