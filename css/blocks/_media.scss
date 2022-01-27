@@ -44,15 +44,27 @@
       &__col{margin-right: 0;}
     }
 
-    
-
     .phone__contact--footer{
       color: #E01F3D;
     }
-
-    
     .social__link{height: 2.142rem;width: 2.142rem;}
-    
+    .product__desc-img{ display: none;}
+    .product__list{flex-direction: column;align-items: center;}
+    .product__pic{padding-top: 0;}
+    .product__photo{
+      height: 302px;
+      width: 302px;
+      margin-right: 0;
+    }
+    .product__desc-title{ text-align: center;}
+    .product__desc-text{text-align: center;padding: 0px 14%;}
+    .product__desc-benefits{justify-content: center;}
+    .product__desc-pay{justify-content: center;}
+    .slider__arrows{width: 77%;bottom: 31.125rem;}
+    .slider__link--back{left: 29%;}
+    .product__desc{margin-top: 1.571rem;}
+
+
 }
 
 
@@ -124,4 +136,6 @@
   width: 24px;
   height: 24px;
 }
+.slider__arrows{width: 99%;bottom: 30.125rem;}
+.slider__link--back{left: 1%;}
 }
