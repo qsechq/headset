@@ -1139,6 +1139,7 @@ html {
   overflow: hidden;
   -webkit-transition: 0.3s;
   transition: 0.3s;
+  position: absolute;
 }
 
 .team__content-block {
@@ -1157,11 +1158,6 @@ html {
   color: #292929;
   font-family: Play;
   font-weight: bold;
-}
-
-.team__link--active:after {
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
 }
 
 .team__list--mobile {

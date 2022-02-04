@@ -53,6 +53,7 @@
   height: 0;
   overflow: hidden;
   transition: 0.3s;
+  position: absolute;
 }
 
 .team__content-block{
@@ -74,11 +75,7 @@
   font-weight: bold;
 }
 
-.team__link--active{
-  &:after{
-    transform: rotate(180deg)
-  }
-}
+
 
 .team__list--mobile{
   display: none;
