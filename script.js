@@ -95,7 +95,9 @@ const validateFields=(form, fieldsArray)=>{
 }
  $('.form').submit((e)=>{
    e.preventDefault();
+
    const form=$(e.currentTarget);
+   
    const name=form.find("[name='name']");
    const phone=form.find("[name='phone']");
    const comment=form.find("[name='comment']");
@@ -141,5 +143,6 @@ const validateFields=(form, fieldsArray)=>{
  $('.app--btn').click(e=>{
    e.preventDefault();
    $.fancybox.close();
+   $(".form").trigger("reset");
  });
  
