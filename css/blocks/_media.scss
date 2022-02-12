@@ -88,6 +88,10 @@
     .team__img{width: 222px;margin: 0 auto;margin-bottom: 1.25rem;}
     .team__content-info{padding: 0 33%;}
 
+    .title__accerdon{width: 0;}
+
+    .team__content{position: relative;}
+
 
 }
 
@@ -141,7 +145,7 @@
         }
         .phone__contact--footer{
           color: #292929;
-          margin-bottom: 1.461rem;
+          
         }
         .social__list{justify-content: center;}
         .social__item{height: 1.846rem;width: 1.846rem; }
@@ -162,4 +166,47 @@
 }
 .slider__arrows{width: 99%;bottom: 30.125rem;}
 .slider__link--back{left: 1%;}
+
+
+
+.map{
+  margin: 0;
 }
+
+.contacts{padding: 0;}
+
+.radio--check{
+  margin: 0;
+}
+.section__title{
+  margin: 1.0625rem;
+}
+.hero__container {
+  padding: 1.625rem 0 2.375rem 0;
+}
+
+
+.hero {
+  background: url(../img/headset.png) top 20% center no-repeat;
+  background-size: 23.071rem 23.071rem;
+  background-color: #F5F5F5;
+}
+
+.bx-wrapper {
+  
+  margin-bottom: 1.615rem;
+}
+
+.product__photo {
+  
+  margin-top: 23px;
+}
+
+.product__desc-benefits {
+  
+  margin-bottom: 1.125rem;
+  
+}
+
+}
+

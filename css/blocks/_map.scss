@@ -1,15 +1,13 @@
 .section__map{
-  background: url("../img/map.png") center center no-repeat;
-  background-size:  cover;
-  position: relative;
+  height: 100vh;
+  min-height: 40.625rem;
 }
 
 .container--map{
-  padding-top: 1.187rem;
-  padding-bottom:1.937rem ;
   display: flex;
+  height: 100%;
+  flex-direction: column;
   justify-content: space-between;
-  position: relative;
 }
 
 .phone__icon{
@@ -22,10 +20,15 @@
 
 .contacts{
   display: flex;
+  padding: 10px 54px 20px 64px;
+  height: 86px;
   justify-content: space-between;
-  width: 57.75rem;
-  position: absolute;
-    width: 57.75rem;
-    max-width: 100%;
-    margin: 0 auto;
+  background: #FFFFFF;
+}
+
+.map{
+  width: 100%;
+    height: 100%;
+    margin-bottom: 1.625rem;
+  
 }

@@ -4,6 +4,11 @@
   right: 3%;
   z-index: $z-fixed__menu;
 }
+.fixed__menu--white .fixed__menu-link::before {
+  
+  background: #fff;
+ 
+}
 
 .fixed__menu-item{
   margin-bottom: 0.3125rem;
@@ -49,3 +54,4 @@
     transform: translate(-50%, -50%);
   }
 }
+

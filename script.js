@@ -53,7 +53,7 @@ const closeEveryItem = container => {
     e.preventDefault();
     
     const $this = $(e.currentTarget);
-    const trio=$this.closest('.team__link')
+    
     const container = $this.closest('.team');
     const elemContainer = $this.closest('.team__item');
   
@@ -146,3 +146,218 @@ const validateFields=(form, fieldsArray)=>{
    $(".form").trigger("reset");
  });
  
+
+ let accerdonItem = document.querySelectorAll('.accerdon__item');
+ accerdonItem.forEach(item => {
+     item.addEventListener('click', function ($event) {
+         
+         if ($event.target.tagName !== 'P') {
+             let accerdonActive = document.querySelectorAll('.accerdon__text--active');
+             let p = item.querySelector('.accerdon__text');
+              p.classList.toggle('accerdon__text--active');
+              accerdonActive.forEach(i => {
+                 i.classList.remove('accerdon__text--active');
+             }); 
+         }  ;
+     });
+ });
+
+
+
+ 
+const sections=$("section");
+const display=$('.main__content');
+const sideMenu=$(".fixed__menu");
+const menuItems=sideMenu.find(".fixed__menu-item");
+
+
+
+let inScroll=false;
+sections.first().addClass("section--active");
+
+
+
+
+const countSectionPosition=(sectionEq)=>{
+  const position=sectionEq * -100;
+  if(isNaN(position)){
+    console.error("неверное значание");
+    return 0;
+  }
+  return position;
+};
+
+const changeMenuThemeForSection=sectionEq=>{
+  const currentSection =sections.eq(sectionEq);
+    const menuTheme=currentSection.attr("data-sidemenu-theme");
+    const activeClass="fixed__menu--white"
+    
+
+    if(menuTheme=="white"){
+      sideMenu.addClass(activeClass);
+    }else{
+      sideMenu.removeClass(activeClass);
+    }
+};
+
+
+const resetActiveClassForItem= (items, itemEq, activeClass)=>{
+  items.eq(itemEq).addClass(activeClass).siblings().removeClass(activeClass);
+}
+
+
+const performTransition=sectionEq=>{
+  if(inScroll) return; 
+
+  const transitionOver=1000;
+  const mouseInertiaover=300;
+    inScroll=true;
+    const position=countSectionPosition(sectionEq);
+    changeMenuThemeForSection(sectionEq)
+    
+ 
+    display.css({
+      transform: `translateY(${position}%)`
+    });
+  
+    resetActiveClassForItem(sections, sectionEq, "section--active");
+    
+ 
+ 
+    setTimeout(()=>{
+      
+      inScroll=false;
+
+      resetActiveClassForItem(menuItems, sectionEq, "fixed__menu-item--active")
+     
+    },transitionOver+mouseInertiaover);
+};
+
+const viewportScroller =() =>{
+  const activeSection=sections.filter('.section--active');
+  const nextSection=activeSection.next();
+  const prevSection=activeSection.prev();
+  return{
+    next(){
+      if( nextSection.length){
+        performTransition(nextSection.index())
+      }
+    },
+    prev(){
+      if(prevSection.length){
+        performTransition(prevSection.index())
+      }
+    }
+  };
+  
+ 
+}
+
+
+
+$(window).on('wheel', (e)=>{
+  const deltaY = e.originalEvent.deltaY;
+  const scroller=viewportScroller();
+  if(deltaY>0){
+    scroller.next();
+    
+  }
+
+  if(deltaY<0){
+    scroller.prev();
+   
+  }
+});
+
+
+
+$(window).on("keydown", e=>{
+  
+  const tagName=e.target.tagName.toLowerCase();
+  const userTypingInInputs=tagName=="input" || tagName=="textarea";
+  const scroller=viewportScroller();
+  if(userTypingInInputs) return;
+    switch(e.keyCode){
+      case 38:
+        scroller.prev();
+        break;
+  
+      case 40:
+        scroller.next();
+        break;
+  
+  
+    }
+  
+  
+});
+
+$(".wrapper").on("touchmove",e=>e.preventDefault());
+
+$("[data-section-to]").click(e=>{
+  e.preventDefault();
+  const $this=$(e.currentTarget);
+  const target=$this.attr("data-section-to");
+  const reqSection=$(`[data-section-id=${target}]`);
+  performTransition(reqSection.index());
+});
+
+
+const mobileDetect= new MobileDetect(wnidow.navigator.userAgent);
+ const isMobile=mobileDetect.mobile();
+if(isMobile){
+  $("body").swipe( {
+    
+    swipe:function(event,direction) {
+        const scroller=viewportScroller();
+        let scrollDirection="";
+        if(direction==="up")scrollDirection="next";
+        if(direction==="down")scrollDirection="prev";
+      scroller[scrollDirection]();
+    },
+  });
+}
+
+
+
+
+
+
+let player;
+const playerContainer = $(".player");
+ 
+let eventsInit = () => {
+  $(".player__start").click(e => {
+    e.preventDefault();
+  
+    if (playerContainer.hasClass("paused")) {
+      playerContainer.removeClass("paused");
+      player.pauseVideo();
+    } else {
+      playerContainer.addClass("paused");
+      player.playVideo();
+    }
+  });
+ }
+
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player("yt-player", {
+    height: "392",
+    width: "662",
+    videoId: "LXb3EKWsInQ",
+    events: {
+      // onReady: onPlayerReady,
+      // onStateChange: onPlayerStateChange
+    },
+    playerVars: {
+      controls: 0,
+      disablekb: 1,
+      showinfo: 0,
+      rel: 0,
+      autoplay: 0,
+      modestbranding: 0
+    }
+  });
+ }
+
+ eventsInit();
